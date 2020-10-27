@@ -11,6 +11,7 @@
 		2AEB7A8E2548A91B00B35842 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7A8D2548A91B00B35842 /* ContentView.swift */; };
 		2AEB7A902548A91F00B35842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEB7A8F2548A91F00B35842 /* Assets.xcassets */; };
 		2AEB7A932548A91F00B35842 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEB7A922548A91F00B35842 /* Preview Assets.xcassets */; };
+		2AEB7A9C2548D8EA00B35842 /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		2AEB7A8F2548A91F00B35842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AEB7A922548A91F00B35842 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2AEB7A942548A91F00B35842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				2AEB7A8B2548A91B00B35842 /* MusicAppApp.swift */,
 				2AEB7A8D2548A91B00B35842 /* ContentView.swift */,
+				2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */,
 				2AEB7A8F2548A91F00B35842 /* Assets.xcassets */,
 				2AEB7A942548A91F00B35842 /* Info.plist */,
 				2AEB7A912548A91F00B35842 /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEB7A9C2548D8EA00B35842 /* BlurEffect.swift in Sources */,
 				2AEB7A8E2548A91B00B35842 /* ContentView.swift in Sources */,
 				2AEB7A8C2548A91B00B35842 /* MusicAppApp.swift in Sources */,
 			);

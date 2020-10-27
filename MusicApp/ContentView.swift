@@ -83,6 +83,9 @@ struct AlbumArt : View {
     var body: some View {
         ZStack {
             Image(album.image).resizable().aspectRatio(contentMode: .fill).frame(width: 170, height: 200, alignment: .center)
+            ZStack {
+                Text(album.name).foregroundColor(.white)
+            }
         }.clipped().cornerRadius(20).shadow(radius: 10).padding(20)
     }
 }
