@@ -56,7 +56,7 @@ struct ContentView: View {
                     LazyHStack{
                         ForEach(self.albums, id: \.self, content: {
                             album in
-                            AlbumArt(album: album).onTapGesture {
+                            AlbumArt(album: album, isWithText: true).onTapGesture {
                                 self.currentAlbum = album
                             }
                         })
@@ -81,13 +81,16 @@ struct ContentView: View {
 
 struct AlbumArt : View {
     var album : Album
+    var isWithText : Bool
     var body: some View {
         ZStack(alignment: .bottom, content: {
             Image(album.image).resizable().aspectRatio(contentMode: .fill).frame(width: 170, height: 200, alignment: .center)
+            if isWithText == true {
             ZStack {
                 Blur(style: .light)
                 Text(album.name).foregroundColor(.white)
             }.frame(height: 60, alignment: .center)
+            }
         }).frame(width: 170, height: 200, alignment: .center).clipped().cornerRadius(20).shadow(radius: 10).padding(20)
     }
 }
