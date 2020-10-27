@@ -70,7 +70,7 @@ struct ContentView: View {
                             id: \.self,
                             content: {
                                 song in
-                                SongCell(song: song)
+                                SongCell(song: song, album: currentAlbum ?? albums.first!)
                             })
                 }
             }.navigationTitle("My Band Name")
@@ -86,10 +86,10 @@ struct AlbumArt : View {
         ZStack(alignment: .bottom, content: {
             Image(album.image).resizable().aspectRatio(contentMode: .fill).frame(width: 170, height: 200, alignment: .center)
             if isWithText == true {
-            ZStack {
-                Blur(style: .light)
-                Text(album.name).foregroundColor(.white)
-            }.frame(height: 60, alignment: .center)
+                ZStack {
+                    Blur(style: .light)
+                    Text(album.name).foregroundColor(.white)
+                }.frame(height: 60, alignment: .center)
             }
         }).frame(width: 170, height: 200, alignment: .center).clipped().cornerRadius(20).shadow(radius: 10).padding(20)
     }
@@ -97,16 +97,21 @@ struct AlbumArt : View {
 
 struct SongCell : View {
     var song : Song
+    var album : Album
     var body: some View {
-        HStack {
-            ZStack {
-                Circle().frame(width: 50, height: 50, alignment: .center).foregroundColor(.blue)
-                Circle().frame(width: 20, height: 20, alignment: .center).foregroundColor(.white)
-            }
-            Text(song.name).bold()
-            Spacer()
-            Text(song.time).bold()
-        }.padding(20)
+        NavigationLink (
+            destination: PlayerView(album: album, song: song),
+            label: {
+                HStack {
+                    ZStack {
+                        Circle().frame(width: 50, height: 50, alignment: .center).foregroundColor(.blue)
+                        Circle().frame(width: 20, height: 20, alignment: .center).foregroundColor(.white)
+                    }
+                    Text(song.name).bold()
+                    Spacer()
+                    Text(song.time).bold()
+                }.padding(20)
+            }).buttonStyle(PlainButtonStyle())
     }
 }
 struct ContentView_Previews: PreviewProvider {
