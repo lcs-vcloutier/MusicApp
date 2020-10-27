@@ -21,6 +21,8 @@ struct Song : Hashable {
     
 }
 struct ContentView: View {
+    var albums = [Album(name: "Album 1", image: <#T##String#>, songs: <#T##[Song]#>)]
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -32,12 +34,14 @@ struct ContentView: View {
     }
 }
 struct AlbumArt : View {
+    var album : Album
     var body: some View {
         EmptyView()
     }
 }
 
 struct SongCell : View {
+    var song : Song
     var body: some View {
         EmptyView()
     }
