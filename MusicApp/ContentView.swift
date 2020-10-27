@@ -25,13 +25,23 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false, content: {
-                    Text("PLaceholder")
-                    })
-                }
+                    Text("Placeholder")
+                })
             }
         }
     }
+}
+struct AlbumArt : View {
+    var body: some View {
+        EmptyView()
+    }
+}
 
+struct SongCell : View {
+    var body: some View {
+        EmptyView()
+    }
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
