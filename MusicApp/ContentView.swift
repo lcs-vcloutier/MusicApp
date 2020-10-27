@@ -47,16 +47,35 @@ struct ContentView: View {
                                 Song(name: "3", time: "2:36"),
                                 Song(name: "4", time: "2:36")])]
     
+    var currentAlbum : Album?
+    
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false, content: {
-                    Text("Placeholder")
+                    ForEach(self.albums, id: \.self, content: {
+                        album in
+                        AlbumArt(album: album)
+                    })
                 })
+                LazyVStack {
+                    ForEach((self.currentAlbum?.songs ?? self.albums.first?.songs) ?? [Song(name: "1", time: "2:36"),
+                                                                                      Song(name: "2", time: "2:36"),
+                                                                                      Song(name: "3", time: "2:36"),
+                                                                                      Song(name: "4", time: "2:36")],
+                    id: \.self,
+                    content: {
+                        song in
+                        SongCell(song: song)
+                    })
+                }
             }
         }
     }
 }
+
+
 struct AlbumArt : View {
     var album : Album
     var body: some View {
