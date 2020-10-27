@@ -54,21 +54,23 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false, content: {
-                    ForEach(self.albums, id: \.self, content: {
-                        album in
-                        AlbumArt(album: album)
-                    })
+                    LazyHStack{
+                        ForEach(self.albums, id: \.self, content: {
+                            album in
+                            AlbumArt(album: album)
+                        })
+                    }
                 })
                 LazyVStack {
                     ForEach((self.currentAlbum?.songs ?? self.albums.first?.songs) ?? [Song(name: "1", time: "2:36"),
-                                                                                      Song(name: "2", time: "2:36"),
-                                                                                      Song(name: "3", time: "2:36"),
-                                                                                      Song(name: "4", time: "2:36")],
-                    id: \.self,
-                    content: {
-                        song in
-                        SongCell(song: song)
-                    })
+                                                                                       Song(name: "2", time: "2:36"),
+                                                                                       Song(name: "3", time: "2:36"),
+                                                                                       Song(name: "4", time: "2:36")],
+                            id: \.self,
+                            content: {
+                                song in
+                                SongCell(song: song)
+                            })
                 }
             }
         }
