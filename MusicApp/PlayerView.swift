@@ -21,7 +21,7 @@ struct PlayerView:  View {
             VStack{
                 Spacer()
                 AlbumArt(album: album, isWithText: false)
-                Text(song.name)
+                Text(song.name).font(.title).fontWeight(.light).foregroundColor(.white)
                 Spacer()
                 ZStack{
                     Color.white.cornerRadius(20).shadow(radius: 10)
@@ -39,7 +39,7 @@ struct PlayerView:  View {
                             Image(systemName: "arrow.right.circle").resizable()
                         }).frame(width: 70, height: 70, alignment: .center).foregroundColor(Color.black.opacity(0.2))
                     }
-                }
+                }.edgesIgnoringSafeArea(.bottom).frame(height: 200, alignment: .center)
             }
         }
     }
