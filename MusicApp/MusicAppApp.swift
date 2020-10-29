@@ -19,7 +19,7 @@ struct MusicAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(data: OurData())
+            ContentView(data: data)
         }
     }
 }

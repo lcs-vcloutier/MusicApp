@@ -41,7 +41,7 @@ struct ContentView: View {
                 })
                 LazyVStack {
                     if self.data.albums.first == nil {
-                        EmptyView()
+                        Text("error")
                     } else {
                         ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ?? [Song(name: "1", time: "2:36"),
                                                                                                 Song(name: "2", time: "2:36"),
