@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 class OurData: ObservableObject {
     @Published public var albums = [Album(name: "Album 1", image: "1",
@@ -33,4 +34,14 @@ class OurData: ObservableObject {
                         songs: [Song(name: "Song 100", time: "2:36"),
                                 Song(name: "Song 145", time: "2:36"),
                                 Song(name: "Song 12", time: "2:36"),
-                                Song(name: "Song 175", time: "2:36")])]}
+                                Song(name: "Song 175", time: "2:36")])]
+    func loadAlbums() {
+        Firestore.firestore().collection("albums").getDocuments { (snapshot, error) in
+            if error == nil {
+                print(snapshot)
+            } else {
+                print(error) //error checker
+            }
+        }
+    }
+}
