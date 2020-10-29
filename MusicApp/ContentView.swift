@@ -40,15 +40,19 @@ struct ContentView: View {
                     }
                 })
                 LazyVStack {
-                    ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ?? [Song(name: "1", time: "2:36"),
-                                                                                       Song(name: "2", time: "2:36"),
-                                                                                       Song(name: "3", time: "2:36"),
-                                                                                       Song(name: "4", time: "2:36")],
-                            id: \.self,
-                            content: {
-                                song in
-                                SongCell(song: song, album: currentAlbum ?? self.data.albums.first!)
-                            })
+                    if self.data.albums.first == nil {
+                        EmptyView()
+                    } else {
+                        ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ?? [Song(name: "1", time: "2:36"),
+                                                                                                Song(name: "2", time: "2:36"),
+                                                                                                Song(name: "3", time: "2:36"),
+                                                                                                Song(name: "4", time: "2:36")],
+                                id: \.self,
+                                content: {
+                                    song in
+                                    SongCell(song: song, album: currentAlbum ?? self.data.albums.first!)
+                                })
+                    }
                 }
             }.navigationTitle("My Band Name")
         }

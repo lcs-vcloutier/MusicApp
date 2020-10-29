@@ -10,35 +10,27 @@ import SwiftUI
 import Firebase
 
 class OurData: ObservableObject {
-    @Published public var albums = [Album(name: "Album 1", image: "1",
-                        songs: [Song(name: "Song 1", time: "2:36"),
-                                Song(name: "Song 2", time: "2:36"),
-                                Song(name: "Song 3", time: "2:36"),
-                                Song(name: "Song 4", time: "2:36")]),
-                  Album(name: "Album 2", image: "2",
-                        songs: [Song(name: "LoveSong 1", time: "2:36"),
-                                Song(name: "LoveSong 2", time: "2:36"),
-                                Song(name: "LoveSong 3", time: "2:36"),
-                                Song(name: "LoveSong 4", time: "2:36")]),
-                  Album(name: "Album 3", image: "3",
-                        songs: [Song(name: "LoveSong 1", time: "2:36"),
-                                Song(name: "HappySong 14", time: "2:36"),
-                                Song(name: "SadSong 16", time: "2:36"),
-                                Song(name: "AngrySong 11", time: "2:36")]),
-                  Album(name: "Album 4", image: "4",
-                        songs: [Song(name: "Song 17", time: "2:36"),
-                                Song(name: "Song 31", time: "2:36"),
-                                Song(name: "Song 51", time: "2:36"),
-                                Song(name: "Song 10", time: "2:36")]),
-                  Album(name: "Album 5", image: "5",
-                        songs: [Song(name: "Song 100", time: "2:36"),
-                                Song(name: "Song 145", time: "2:36"),
-                                Song(name: "Song 12", time: "2:36"),
-                                Song(name: "Song 175", time: "2:36")])]
+    @Published public var albums = [Album]()
+    
+
     func loadAlbums() {
         Firestore.firestore().collection("albums").getDocuments { (snapshot, error) in
             if error == nil {
-                print(snapshot)
+                for document in snapshot!.documents {
+                    let name = document.data()["name"] as? String ?? "error"
+                    let image = document.data()["image"] as? String ?? "error"
+                    let songs = document.data()["songs"] as? [String : [String : Any]]
+                    
+                    var songsArray = [Song]()
+                    if let songs = songs {
+                        for song in songs {
+                            let songName = song.value["name"] as? String ?? "error"
+                            let songTime = song.value["time"] as? String ?? "error"
+                            songsArray.append(Song(name: songName, time: songTime))
+                        }
+                    }
+                    self.albums.append(Album(name: name, image: image, songs: songsArray))
+                }
             } else {
                 print(error) //error checker
             }
