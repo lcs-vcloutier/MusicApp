@@ -20,7 +20,8 @@ class OurData: ObservableObject {
                     let name = document.data()["name"] as? String ?? "error"
                     let image = document.data()["image"] as? String ?? "error"
                     let songs = document.data()["songs"] as? [String : [String : Any]]
-                    
+                    print(name)
+                    print(image)
                     var songsArray = [Song]()
                     if let songs = songs {
                         for song in songs {
