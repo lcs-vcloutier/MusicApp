@@ -14,6 +14,7 @@
 		2AEB7A9C2548D8EA00B35842 /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */; };
 		2AEB7A9F2548DD6800B35842 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7A9E2548DD6800B35842 /* PlayerView.swift */; };
 		2AEB7AA22548E5FE00B35842 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AEB7AA12548E5FE00B35842 /* GoogleService-Info.plist */; };
+		2AEB7ACE2548F94700B35842 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB7ACD2548F94700B35842 /* Data.swift */; };
 		DA0075F9F5AA271878076A92 /* Pods_MusicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C184F04AB7F1074048FB2B99 /* Pods_MusicApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; };
 		2AEB7A9E2548DD6800B35842 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		2AEB7AA12548E5FE00B35842 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2AEB7ACD2548F94700B35842 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		6558935B35EC4C2D83E643FD /* Pods-MusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.release.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		C184F04AB7F1074048FB2B99 /* Pods_MusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F8FB7E2859297EF258013F /* Pods-MusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicApp.debug.xcconfig"; path = "Target Support Files/Pods-MusicApp/Pods-MusicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				2AEB7AA12548E5FE00B35842 /* GoogleService-Info.plist */,
 				2AEB7A8B2548A91B00B35842 /* MusicAppApp.swift */,
 				2AEB7A8D2548A91B00B35842 /* ContentView.swift */,
+				2AEB7ACD2548F94700B35842 /* Data.swift */,
 				2AEB7A9E2548DD6800B35842 /* PlayerView.swift */,
 				2AEB7A9B2548D8EA00B35842 /* BlurEffect.swift */,
 				2AEB7A8F2548A91F00B35842 /* Assets.xcassets */,
@@ -219,6 +222,7 @@
 				2AEB7A9C2548D8EA00B35842 /* BlurEffect.swift in Sources */,
 				2AEB7A8E2548A91B00B35842 /* ContentView.swift in Sources */,
 				2AEB7A8C2548A91B00B35842 /* MusicAppApp.swift in Sources */,
+				2AEB7ACE2548F94700B35842 /* Data.swift in Sources */,
 				2AEB7A9F2548DD6800B35842 /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
