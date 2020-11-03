@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+//import SwiftAudioPlayer
+import Firebase
+import AVFoundation
 
 struct PlayerView:  View {
     var album : Album
@@ -40,6 +43,16 @@ struct PlayerView:  View {
                         }).frame(width: 50, height: 50, alignment: .center).foregroundColor(Color.black.opacity(0.2))
                     }
                 }.edgesIgnoringSafeArea(.bottom).frame(height: 200, alignment: .center)
+            }
+        } .onAppear() {
+           let storage = Storage.storage().reference(forURL: self.song.file)
+            storage.downloadURL { (url, error) in
+                if error != nil {
+                    print(error)
+                } else {
+                    let player = AVPlayer(url: url!)
+                    player.play()
+                }
             }
         }
     }
